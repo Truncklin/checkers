@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Locations.cs" />
      <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
@@ -97,11 +98,11 @@
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\circleTable" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\brownWoodTable" />
      <Folder Include="Assets\Resources\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\Chess\Fbx" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair\redChair\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair\fourHorizontalbackrestChair\editableMaterials" />
      <Folder Include="Assets\Resources\TextMesh Pro\Resources\Sprite Assets" />
-     <Folder Include="Assets\Resources\ChessResourses\Materials" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\lamps" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\vases\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\lamps\cylinderLamp\editableMaterial" />
@@ -110,6 +111,7 @@
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\napkinRing" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\brunch" />
+     <Folder Include="Assets\Chess\Prefab" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\lamps\wireframeLamps" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\CenterpiecePlant" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\brownWoodTable\editableMaterial" />
@@ -117,6 +119,7 @@
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\candlestick" />
      <None Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair\fourVerticalBackrestChair" />
+     <Folder Include="Assets\Chess\Demo\Materials" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\brunch\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\plants\bambooPot\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\plants\redTree\editableMaterial" />
@@ -130,18 +133,17 @@
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom" />
      <Folder Include="Assets\Resources\TextMesh Pro\Resources" />
-     <Folder Include="Assets\Resources\ChessResourses" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\prefabs\decor" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair\fourVerticalBackrestChair\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\lamps\coneLamps" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\lamps\coneLamps\editableMaterial" />
+     <Folder Include="Assets\Chess\Fbx\Materials" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\platter" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\goldenSphere\editableMaterial" />
      <Folder Include="Assets\Resources\TextMesh Pro" />
-     <Folder Include="Assets\Resources\ChessResourses\Scenes" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\candlestick\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\vases" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\squareTable" />
@@ -172,6 +174,7 @@
      <Folder Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Scripts" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\squareLegsTable" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\Chess\Materials" />
      <Folder Include="Assets\Resources\TextMesh Pro\Shaders" />
      <Folder Include="Assets\Scripts\UI" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\platter\editableMaterial" />
@@ -191,6 +194,7 @@
      <Folder Include="Assets\Resources\diningRoom\diningRoom\scene\scene\modelsScene" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\cylinderTable\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\cylinderTable" />
+     <Folder Include="Assets\Chess" />
      <Folder Include="Assets\Resources\TextMesh Pro\Examples &amp; Extras\Prefabs" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\RectangleTable\editableMaterial" />
@@ -202,7 +206,6 @@
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\joinedLegsTable" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\tables\squareLegsTable\editableMaterial" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <Folder Include="Assets\Resources\ChessResourses\Textures" />
      <Folder Include="Assets\Resources\Material" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\bottles\editableMaterial" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\CenterpiecePlant\editableMaterial" />
@@ -215,6 +218,7 @@
      <Folder Include="Assets\Animation" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\candle\editableMaterials" />
+     <Folder Include="Assets\Chess\Demo" />
      <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\decor\candle" />
      <Folder Include="Assets\Resources\diningRoom\diningRoom\models\chair\twoHorizontalbackrestChair" />

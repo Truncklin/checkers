@@ -79,7 +79,7 @@ public class Move : MonoBehaviour
         foreach (Vector2Int loc in moveLocations)
         {
             GameObject highlight;
-            if (GameManager.instance.PieceAtGrid(loc))
+            if (GameManager.instance.GridForPiece(movingPiece)[0] < loc[0]-1 || GameManager.instance.GridForPiece(movingPiece)[0] > loc[0]+1)
             {
                 highlight = Instantiate(attackLocationPrefab, Geometry.PointFromGrid(loc), Quaternion.identity, gameObject.transform);
                 Debug.Log("Atack");
@@ -93,17 +93,17 @@ public class Move : MonoBehaviour
         }
     }
 
-private void ExitState()
-{
-    this.enabled = false;
-    CageSelector selector = GetComponent<CageSelector>();
-    tileHighlight.SetActive(false);
-    GameManager.instance.DeselectPiece(movingPiece);
-    movingPiece = null;
-    selector.EnterState();
-    foreach (GameObject highlight in locationHighlights)
+    private void ExitState()
     {
-        Destroy(highlight);
+        this.enabled = false;
+        CageSelector selector = GetComponent<CageSelector>();
+        tileHighlight.SetActive(false);
+        GameManager.instance.DeselectPiece(movingPiece);
+        movingPiece = null;
+        selector.EnterState();
+        foreach (GameObject highlight in locationHighlights)
+        {
+            Destroy(highlight);
+        }
     }
-}
 }

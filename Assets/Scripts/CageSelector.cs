@@ -9,6 +9,7 @@ public class CageSelector : MonoBehaviour
     public GameObject tileHighlightPrefab;
 
     private GameObject tileHighlight;
+    private Ray ray;
 
     void Start()
     {
@@ -20,27 +21,31 @@ public class CageSelector : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0); // Первое прикосновение
 
             if (touch.phase == TouchPhase.Began)
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                ray = Camera.main.ScreenPointToRay(touch.position);
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Vector3 point = hit.point;
-                    Vector2Int gridPoint = Geometry.GridFromPoint(point);
+        }
+        if (Physics.Raycast(ray, out hit))
+        {
+            Vector3 point = hit.point;
+            Vector2Int gridPoint = Geometry.GridFromPoint(point);
 
-                    GameObject selectedPiece = GameManager.instance.PieceAtGrid(gridPoint);
-                    if (selectedPiece != null)
-                    {
-                        GameManager.instance.SelectPiece(selectedPiece);
-                        ExitState(selectedPiece);
-                    }
-                }
+            GameObject selectedPiece = GameManager.instance.PieceAtGrid(gridPoint);
+            if (selectedPiece != null)
+            {
+                GameManager.instance.SelectPiece(selectedPiece);
+                ExitState(selectedPiece);
             }
         }
         else
@@ -60,6 +65,6 @@ public class CageSelector : MonoBehaviour
         tileHighlight.SetActive(false);
         Move move = GetComponent<Move>();
         move.EnterState(movingPiece);
-        Debug.Log("MoveEnterState");
+        
     }
 }

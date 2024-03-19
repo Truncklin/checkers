@@ -35,7 +35,7 @@ namespace UI
             float _second = 4.4f;
             yield return new WaitForSeconds(_second);
             menuCamera.gameObject.SetActive(false);
-        camera.gameObject.SetActive(true);
+            camera.gameObject.SetActive(true);
         }
     }
 }
