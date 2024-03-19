@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Board board;
 
     private GameObject[,] pieces;
-    private List<GameObject> movedPawns;
 
     void Awake()
     {
@@ -26,8 +25,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pieces = new GameObject[8, 8];
-        movedPawns = new List<GameObject>();
-
 
         InitialSetup();
     }
@@ -127,7 +124,7 @@ public class GameManager : MonoBehaviour
         return pieces[gridPoint.x, gridPoint.y];
     }
     
-    public void NextPlayer()
+    public void NextPlayer(GameObject piece)
     {
         
         

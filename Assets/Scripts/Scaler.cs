@@ -25,10 +25,6 @@ public class Scaler : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(RotateL());
-        }*/
         HandleScaling();
         HandleSwiping();
     }

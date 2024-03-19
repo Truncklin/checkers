@@ -9,6 +9,8 @@ public class Move : MonoBehaviour
 
     private GameObject tileHighlight;
     private GameObject movingPiece;
+    private Vector2Int destroyPiece;
+    private Vector2Int movingDestroyPiece;
     private List<Vector2Int> moveLocations;
     private List<GameObject> locationHighlights;
 
@@ -23,8 +25,8 @@ public class Move : MonoBehaviour
     void Update ()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit))
         {
             Vector3 point = hit.point;
@@ -38,8 +40,10 @@ public class Move : MonoBehaviour
                 {
                     return;
                 }
-                
                 GameManager.instance.Move(movingPiece, gridPoint);
+                if (GameManager.instance.GridForPiece(movingPiece) == movingDestroyPiece)
+                    GameManager.instance.CapturePieceAt(destroyPiece);
+                Debug.Log(GameManager.instance.GridForPiece(movingPiece)+" - " + movingDestroyPiece);
                 
                 ExitState();
             }
@@ -69,6 +73,7 @@ public class Move : MonoBehaviour
         movingPiece = piece;
         this.enabled = true;
         moveLocations = GameManager.instance.MovesForPiece(movingPiece);
+        movingDestroyPiece = GameManager.instance.GridForPiece(movingPiece);
         locationHighlights = new List<GameObject>();
         if (moveLocations.Count == 0)
         {
@@ -81,6 +86,8 @@ public class Move : MonoBehaviour
             GameObject highlight;
             if (GameManager.instance.GridForPiece(movingPiece)[0] < loc[0]-1 || GameManager.instance.GridForPiece(movingPiece)[0] > loc[0]+1)
             {
+                movingDestroyPiece = loc;
+                destroyPiece = GameManager.instance.GridForPiece(movingPiece) + (loc-GameManager.instance.GridForPiece(movingPiece)) / 2;
                 highlight = Instantiate(attackLocationPrefab, Geometry.PointFromGrid(loc), Quaternion.identity, gameObject.transform);
                 Debug.Log("Atack");
             }
